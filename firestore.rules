@@ -1,0 +1,78 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function getUserData() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data;
+    }
+
+    function isAdmin() {
+      return isAuthenticated() && (getUserData().role == 'admin' || getUserData().role == 'ADMIN');
+    }
+
+    function isClubMember() {
+      return isAuthenticated() && (getUserData().role == 'club_member' || getUserData().role == 'CLUB_MEMBER');
+    }
+
+    function isClubLeadFor(clubId) {
+      return isClubMember() && getUserData().clubId == clubId;
+    }
+
+    // USERS collection
+    match /users/{userId} {
+      // Anyone logged in can read user info (e.g. to display author/club names)
+      allow read: if isAuthenticated();
+      // Users can create their own profile upon registration, or admins can manage all
+      allow create: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      allow update: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    // CLUBS collection
+    match /clubs/{clubId} {
+      allow read: if isAuthenticated();
+      allow write: if isAdmin();
+    }
+
+    // ANNOUNCEMENTS collection
+    match /announcements/{announcementId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin() || (isClubMember() && request.resource.data.clubId == getUserData().clubId);
+      allow update: if isAdmin() || (isClubMember() && resource.data.clubId == getUserData().clubId);
+      allow delete: if isAdmin() || (isClubMember() && resource.data.clubId == getUserData().clubId);
+    }
+
+    // EVENTS collection
+    match /events/{eventId} {
+      allow read: if isAuthenticated();
+      allow create: if isAdmin() || (isClubMember() && request.resource.data.clubId == getUserData().clubId);
+      allow update: if isAdmin() || (isClubMember() && resource.data.clubId == getUserData().clubId);
+      allow delete: if isAdmin() || (isClubMember() && resource.data.clubId == getUserData().clubId);
+    }
+
+    // RESOURCES collection (Google Drive link resources - strictly no calendar)
+    match /resources/{resourceId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin() || (isAuthenticated() && resource.data.uploaderUid == request.auth.uid);
+    }
+
+    // LOST & FOUND collection
+    match /lost_found/{itemId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin() || (isAuthenticated() && (resource.data.userId == request.auth.uid || resource.data.reportedBy == request.auth.uid));
+    }
+
+    // NOTIFICATIONS collection
+    match /notifications/{notificationId} {
+      allow read: if isAuthenticated();
+      allow create, update, delete: if isAdmin();
+    }
+  }
+}

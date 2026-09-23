@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand colors -->
+    <color name="maroon">#800000</color>
+    <color name="maroon_dark">#650000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#212121</color>
+
+    <!-- Surfaces & Backgrounds -->
+    <color name="bg_main">#FFFFFF</color>
+    <color name="card_bg">#FFFFFF</color>
+    <color name="surface_light_maroon">#FFF7F7</color>
+    <color name="accent_light_maroon">#F8E8EA</color>
+    <color name="maroon_surface">#FFF7F7</color>
+    <color name="maroon_light">#F8E8EA</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#212121</color>
+    <color name="text_dark">#212121</color>
+    <color name="text_secondary">#666666</color>
+    <color name="text_hint">#9E9E9E</color>
+
+    <!-- Borders & Dividers -->
+    <color name="border_maroon">#E8C8CC</color>
+    <color name="border_gray">#E8C8CC</color>
+    <color name="light_gray">#FFF7F7</color>
+
+    <!-- Bottom Navigation -->
+    <color name="nav_indicator">#F3DDE1</color>
+
+    <!-- Status colors for Lost & Found -->
+    <color name="status_lost">#C62828</color>
+    <color name="status_lost_text">#C62828</color>
+    <color name="status_lost_bg">#FDE8E8</color>
+    <color name="status_found">#2E7D32</color>
+    <color name="status_found_text">#2E7D32</color>
+    <color name="status_found_bg">#E8F5E9</color>
+
+    <!-- Role badges -->
+    <color name="badge_student_bg">#F8E8EA</color>
+    <color name="badge_student_text">#800000</color>
+    <color name="badge_admin_bg">#F8E8EA</color>
+    <color name="badge_admin_text">#650000</color>
+    <color name="badge_club_bg">#E8F5E9</color>
+    <color name="badge_club_text">#2E7D32</color>
+</resources>

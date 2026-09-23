@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="72dp"
+    android:height="72dp"
+    android:viewportWidth="72"
+    android:viewportHeight="72">
+    <!-- Outer Shield / Emblem -->
+    <path
+        android:fillColor="@color/maroon"
+        android:pathData="M36,6L12,16v18c0,16.2 10.2,31.2 24,35 13.8,-3.8 24,-18.8 24,-35V16L36,6z"/>
+    <!-- Academic Pillar / Graduation Cap Motif inside -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M36,20L18,29l18,9 15,-7.5V42h3V29L36,20zM36,44c-5.52,0 -10,-2.24 -10,-5v6.5c0,3.31 4.48,6 10,6s10,-2.69 10,-6V39C46,41.76 41.52,44 36,44z"/>
+</vector>

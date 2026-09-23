@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">CampusOne</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_notifications">Alerts</string>
+    <string name="nav_clubs">Clubs</string>
+    <string name="nav_profile">Profile</string>
+
+    <string name="welcome_title">Welcome to CampusOne</string>
+    <string name="welcome_subtitle">Your college community, all in one place.</string>
+    <string name="upcoming_highlight">Upcoming Highlight</string>
+    <string name="quick_access">Quick Access</string>
+    <string name="resources">Resources</string>
+    <string name="lost_found">Lost &amp; Found</string>
+
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="notifications">Notifications</string>
+    <string name="student_clubs">Student Clubs</string>
+    <string name="logout">Logout</string>
+</resources>

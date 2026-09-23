@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CampusOne" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/maroon</item>
+        <item name="colorPrimaryVariant">@color/maroon_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/maroon</item>
+        <item name="colorSecondaryVariant">@color/maroon_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Surfaces and Containers -->
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/surface_light_maroon</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="colorSurfaceContainer">@color/white</item>
+        <item name="colorSurfaceContainerLow">@color/white</item>
+        <item name="colorSurfaceContainerHigh">@color/surface_light_maroon</item>
+        <item name="colorSurfaceContainerHighest">@color/accent_light_maroon</item>
+
+        <!-- Material Card Style -->
+        <item name="materialCardViewStyle">@style/Widget.CampusOne.Card</item>
+
+        <!-- Bottom Navigation Style -->
+        <item name="bottomNavigationStyle">@style/Widget.CampusOne.BottomNav</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/maroon_dark</item>
+        <!-- Background colors -->
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <style name="Widget.CampusOne.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="strokeColor">@color/border_maroon</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cardElevation">1dp</item>
+    </style>
+
+    <style name="Widget.CampusOne.BottomNav" parent="Widget.Material3.BottomNavigationView">
+        <item name="backgroundTint">@color/maroon</item>
+        <item name="itemIconTint">@color/nav_item_icon_tint</item>
+        <item name="itemTextColor">@color/nav_item_text_color</item>
+        <item name="itemActiveIndicatorStyle">@style/Widget.CampusOne.ActiveIndicator</item>
+    </style>
+
+    <style name="Widget.CampusOne.ActiveIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/nav_indicator</item>
+    </style>
+
+    <style name="Theme.CampusOne" parent="Base.Theme.CampusOne" />
+
+    <style name="CircleImage" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>

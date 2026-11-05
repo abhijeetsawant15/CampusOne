@@ -190,3 +190,14 @@ To connect your own genuine Firebase backend to CampusOne:
 
 ### Q4: How is memory managed with large lists like Announcements and Events?
 > **Answer:** We utilize Android's `RecyclerView` with custom `ViewHolder` implementations. Unlike legacy `ListView`, `RecyclerView` recycles and binds only the views visible in the viewport plus a small cache buffer, preventing Out-Of-Memory (OOM) errors even when displaying hundreds of college events or announcements.
+## Project Team & Contributions
+
+### My Contribution – Aditi Avsare
+- Reviewed the project structure and technical documentation.
+- Studied the Android application features and Firebase integration.
+- Contributed to improving project documentation and presentation.
+
+### Project Overview
+CampusOne is a collaborative Android application designed to
+connect students, college administration, and student clubs
+through a centralized campus platform.
